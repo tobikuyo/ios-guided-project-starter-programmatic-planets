@@ -29,7 +29,7 @@ class SettingsViewController: UIViewController {
         userDefaults.set(sender.isOn, forKey: .shouldShowPlutoKey)
     }
     
-    func done() {
+    @objc func done() {
         dismiss(animated: true, completion: nil)
     }
     
