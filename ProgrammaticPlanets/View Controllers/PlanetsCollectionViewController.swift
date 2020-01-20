@@ -39,3 +39,16 @@ class PlanetsCollectionViewController: UICollectionViewController {
     @IBAction func unwindToPlanetsCollectionViewController(_ sender: UIStoryboardSegue) {
     }
 }
+
+extension PlanetsCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let horizontalItems: CGFloat = 3
+        
+        let horizontalInsets = collectionView.contentInset.left + collectionView.contentInset.right
+        let itemSpacing = (collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing * (horizontalItems - 1)
+        let width = (collectionView.frame.width - horizontalInsets - itemSpacing) / horizontalItems
+
+        return CGSize(width: width, height: width * 1.2)
+    }
+}
