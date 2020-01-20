@@ -59,7 +59,7 @@ class SettingsViewController: UIViewController {
                                                         attribute: .trailing,
                                                         relatedBy: .equal,
                                                         toItem: view.safeAreaLayoutGuide,
-                                                        attribute: .top,
+                                                        attribute: .trailing,
                                                         multiplier: 1,
                                                         constant: -8)
         
@@ -80,14 +80,12 @@ class SettingsViewController: UIViewController {
         
         let label = UILabel()
         label.text = "Is Pluto a planet?"
-        label.addSubview(label)
+        view.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         
         label.centerYAnchor.constraint(equalTo: plutoSwitch.centerYAnchor).isActive = true
         label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
         label.trailingAnchor.constraint(equalTo: plutoSwitch.leadingAnchor, constant: -8).isActive = true
-        
-        
     }
     
     private func updateViews() {
